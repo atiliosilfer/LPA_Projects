@@ -4,7 +4,7 @@ using namespace std;
 
 string RemoverEspacos(string s)
 {
-    while (s[0] == ' '){
+    while (isspace(s[0])){
         s.erase(0, 1);
     }
     while (s[s.length() - 1] == ' '){
@@ -25,7 +25,17 @@ string RemoverEspacos(string s)
 
 int main()
 {
-    string s = "   a   b   c    ";
+    string *s = new string[100];
+    int n;
+
+    cin >> n;
+    cin.ignore ();
+
+    while (n != 0){
+        getline (cin, s);
+    }
+
+    
     
     cout << '-' << s << '-' << endl;
 
