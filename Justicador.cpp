@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -19,29 +20,46 @@ string RemoverEspacos(string s)
             }
         }
     }
-
     return s;
+}
+
+void JustificaString (string s, int qtddEspacos){
+    for (int i = 0; i < qtddEspacos; i++){
+        cout << ' ';
+    }
+    cout << s << "\n";
 }
 
 int main()
 {
-    string *s = new string[100];
     int n;
+    int maiorString = 0;
 
     cin >> n;
-    cin.ignore ();
 
     while (n != 0){
-        getline (cin, s);
+        cin.ignore ();
+
+        string *s = new string[n];
+        for (int i = 0; i < n; i++){
+            getline (cin, s[i]);
+            s[i] = RemoverEspacos (s[i]);
+            if (s[i].length() > maiorString){
+                maiorString = s[i].length();
+            }
+        }
+        
+        for (int i = 0; i < n; i++){
+            JustificaString (s[i], maiorString-s[i].length());
+        }
+        
+        delete s;
+
+        cin >> n;
+        if (n != 0){
+            cout << "\n";
+            maiorString = 0;
+        }
     }
-
-    
-    
-    cout << '-' << s << '-' << endl;
-
-    s = RemoverEspacos (s);
-
-    cout << '-' << s << '-';
-    
     return 0;
 }
