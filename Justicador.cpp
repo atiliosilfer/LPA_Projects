@@ -8,14 +8,15 @@ string RemoverEspacos(string s)
     while (isspace(s[0])){
         s.erase(0, 1);
     }
-    while (s[s.length() - 1] == ' '){
+
+    while (isspace(s[s.length() - 1])){
         s.pop_back();
     }
 
     for (int i = 0; i < s.length(); i++){
-        if (s[i] == ' '){
+        if (isspace(s[i])){
             i = i+1;
-            while (s[i] == ' '){
+            while (isspace(s[i])){ 
                 s.erase (i, 1);
             }
         }
@@ -37,7 +38,7 @@ int main()
 
     cin >> n;
 
-    while (n != 0){
+    while (n > 0){
         cin.ignore ();
 
         string *s = new string[n];
