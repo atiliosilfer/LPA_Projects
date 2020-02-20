@@ -3,8 +3,7 @@
 
 using namespace std;
 
-string RemoverEspacos(string s)
-{
+string RemoverEspacos(string s){
     while (isspace(s[0])){
         s.erase(0, 1);
     }
@@ -21,6 +20,7 @@ string RemoverEspacos(string s)
             }
         }
     }
+    
     return s;
 }
 
@@ -31,8 +31,7 @@ void JustificaString (string s, int qtddEspacos){
     cout << s << "\n";
 }
 
-int main()
-{
+int main(){
     int n;
     int maiorString = 0;
 
@@ -54,7 +53,7 @@ int main()
             JustificaString (s[i], maiorString-s[i].length());
         }
         
-        delete s;
+        delete[] s;
 
         cin >> n;
         if (n != 0){
