@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <iomanip>
+#include <iomanip> 
 #include <string.h>
 
 #define WHITE 0
