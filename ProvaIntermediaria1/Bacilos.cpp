@@ -1,29 +1,58 @@
 #include <iostream>
-#include <string>
 #include <bits/stdc++.h>
 
 using namespace std;
+int fib[1501];
 
+int fibonacci(){
+    int a = 0, b = 1, c;
+    fib[0] = 0;
+    fib[1] = 1;
+    fib[2] = 1;
+    for (int i = 2; i < 1501; i++){
+        c = (a + b) % 1000;
+        fib[i] = c;
+        a = b % 1000;
+        b = c;
+    }
+    return 0;
+}
 
-int fibonacci(int n) 
-{ 
-    if (n <= 1) 
-        return n;
+int mod (string instante) {
+    int resp = 0;
 
-    n = n%1000;
-     
-    return fibonacci(n-1) + fibonacci(n-2); 
-} 
+    for (int i = 0; i < instante.length(); i++){
+        resp = ((resp*10) + (instante[i] - '0')) % 1500;
+    }
+
+    return resp;
+}
 
 int main()
 {
-    int numInstancias, instante;
+    int numInstancias, pos;
+    string instante;
     cin >> numInstancias;
-
-    for (int i = 0; i < numInstancias; i++) {
+    fibonacci();
+        
+    for (int i = 0; i < numInstancias; i++)
+    {
         cin >> instante;
-        instante = fibonacci (instante);
-        cout << instante << endl;
+        pos = mod (instante);
+        
+        if (fib[pos] < 10)
+        {
+            cout << "00" << fib[pos]  << endl;
+        }
+        else if (fib[pos] < 100)
+        {
+            cout << '0' << fib[pos]  << endl;
+        }
+        else
+        {
+            cout << fib[pos]  << endl;
+        }
     }
+
     return 0;
 }
