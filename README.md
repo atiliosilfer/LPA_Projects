@@ -21,3 +21,13 @@
   * [Link do Exercício](https://uva.onlinejudge.org/external/106/p10608.pdf)
   * Linguagem: C++
   * Programa: LargestGroup.cpp
+
+* Exercício 04: Encontrar tamanho da árvore geradora mínima
+  * [Link do Exercício](https://onlinejudge.org/external/117/11710.pdf)
+  * Linguagem: C++
+  * Programa: ExpensiveSubway.cpp
+
+* Exercício 05: Encontrar maior aresta em uma árvore geradora mínima
+  * [Link do Exercício](https://onlinejudge.org/external/118/11857.pdf)
+  * Linguagem: C++
+  * Programa: DrivingRange.cpp
