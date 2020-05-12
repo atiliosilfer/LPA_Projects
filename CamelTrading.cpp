@@ -115,9 +115,6 @@ int main() {
       cout << "The maximum and minimum are " << numbers[0] << " and " << numbers[0] << "." << endl;
     }
 
-      
-
-
     numbers.clear();
     numbers1.clear();
     operadores.clear();
